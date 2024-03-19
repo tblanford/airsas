@@ -6,8 +6,8 @@ close all
 %% Setup the paths to the data file for processing and analysis
 
 folder='D:\modelFidelityATR\data\experiment\dataSet'; %path to folder with the data
-filename='t1e4_01.h5'; %data file to load
-dPath=fullfile(folder,filename);
+filename='t2e3_01.h5'; %data file to load
+dPath=fullfile(folder,'scenes',filename);
 %% Load and Plot a SAS Image
 %One of the simplest interactions with the data is to load the
 %reconstructed imagery from a single channel and plot it.  

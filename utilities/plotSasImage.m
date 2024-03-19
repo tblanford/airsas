@@ -18,11 +18,13 @@ end
 img=20*log10(abs(A.Results.Bp.image))+rNorm;
 
 imagesc(A.Results.Bp.xVect, A.Results.Bp.yVect, img)
-set(gca,'YDir','normal') 
+set(gca,'YDir','reverse') 
+set(gca,'XDir','reverse') 
 clim([-dynamicRange,0]+max(img(:)));
 xlabel('Along Track (m)')
 ylabel('Cross Track (m)')
 colormap(sasColormap)
+axis image
 
 h=colorbar;
 if normFlag

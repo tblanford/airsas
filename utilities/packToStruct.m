@@ -12,7 +12,7 @@ function [A] = packToStruct(folder,filename,chanSelect,cSelect)
 %pre-populate the data structure for the desired number of channels to load
 A=initStruct(numel(chanSelect)); 
 
-dPath=fullfile(folder,filename); %path to .h5 file
+dPath=fullfile(folder,'scenes',filename); %path to .h5 file
 
 %load the non-acoustic parameters
 %first get the parameters stored in the .h5 file
@@ -21,13 +21,13 @@ P.humidity=h5read(dPath,'/na/temperature');
 P.position=h5read(dPath,'/na/position');
 P.soundSpeed=getAirSpeed(P,cSelect);
 %next, get the data acquistion parameters
-daqParams=readtable(fullfile(folder,'acquistionParams.csv'));
+daqParams=readtable(fullfile(folder,'characterization data','acquistionParams.csv'));
 P.fs=daqParams{1,2};
 P.time=h5readatt(dPath,'/','collection_date');
 [A.Params]=deal(P);
 groupDelay=daqParams{2,2}; %group delay of the acquistion system, samples
 
-sensorCoord=readmatrix(fullfile(folder,'sensorCoordinates.csv'));
+sensorCoord=readmatrix(fullfile(folder,'characterization data','sensorCoordinates.csv'));
 for n=1:numel(chanSelect)
     A(n).Hardware.rxPos=sensorCoord(chanSelect(n)+1,2:4);
     A(n).Hardware.txPos=sensorCoord(1,2:4);
