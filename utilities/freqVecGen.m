@@ -6,7 +6,7 @@ function freqVec=freqVecGen(Nt,fs)
 % frequencies (-fs/2 to 0-df)
 %
 % Nt = Number of samples
-% fs - Sampling frequency
+% fs - Sampling frequency, Hz
 % freqVec - Vector of frequencies
 %
 

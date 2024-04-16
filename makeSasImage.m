@@ -5,9 +5,13 @@ close all
 
 %% Setup the paths to the data file for processing and analysis
 
-folder='D:\modelFidelityATR\data\experiment\dataSet'; %path to folder with the data
-filename='t2e3_01.h5'; %data file to load
+%Also Tom specific -- TO DO: Generalize? UI?
+folder='C:\Users\kyled\Documents\teb_airsas'; %path to folder containing both \scenes and \characterization data
+filename='t2e1_29.h5'; %data file to load
 dPath=fullfile(folder,'scenes',filename);
+
+addpath('utilities\') %add the utilities folder
+
 %% Load and Plot a SAS Image
 %One of the simplest interactions with the data is to load the
 %reconstructed imagery from a single channel and plot it.  
@@ -51,6 +55,7 @@ normFlag=1; %flag to apply 30*log10(r) range normalization to the imagery
 % (1 = normalization on, 0 = normalization off)
 dynamicRange=35; %dynamic range to display in the image, dB
 
+%Reconstruct imagery one channel (one microphone) at a time
 for m=1:numel(chanSelect)
     %pass the image reconstruction parameters to the data structure
     A(m).Results.Bp.xVect=along_track(1):dx:along_track(2); 

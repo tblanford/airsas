@@ -4,11 +4,10 @@ function A = reconstructImage(A, r, img_plane,fov)
 % A = structure with preprocessed data (from pp_airsas)
 % r = upsampling ratio
 % img_plane = coordinate along the z-axis at which to beamform
-% fov = field of view of transmitter (degrees)
+% fov = field of view of transmitter, degrees
 % 
 % Outputs:
 % A = structure with backprojection data added
-
 
 
 % Extract variables
@@ -54,7 +53,7 @@ for ping = 1:n_pings
                  +  (Ys - Rx(2)).^2      ...
                  +  (img_plane - Rx(3)).^2);
 
-    thetaMtx=atand((Xs - Tx(1))./(Ys - Tx(2))); %azimuthal angle from the transmitter to the pixel
+    thetaMtx=atand((Xs - Tx(1))./(Ys - Tx(2))); %azimuthal angle from the transmitter to the pixel, degrees
     
     %The position in the time series that corresponds to the center of a
     %pixel is likely not an integer-number sample.  Nearest neighbor

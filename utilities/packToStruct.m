@@ -125,7 +125,7 @@ end
 
 
 function A = txBlanker(A)
-% This subfunction zeros out the portion of the received waveforms that
+% This subfunction zeros out ("blanks") the portion of the received waveforms that
 % correspond to when the transmitter was emitting the pulse.  
     for nDex = 1:numel(A)       
         

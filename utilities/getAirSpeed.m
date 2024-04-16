@@ -22,11 +22,11 @@ switch modelFlag
         %and CO2 concentration" JASA 1992
         tempK=temp+273.15; %thermodynamic temperature, K
         p = 101.325e3; %atmpospheric pressure, Pa
-        f = 1.00062+3.14e-8*p +5.6e-7*temp.^2;
-        psv=exp(1.2811805e-5*tempK.^2-1.9509874e-2*tempK + 34.04926034 - 6.3536311e3./tempK); %saturation vapor pressure of water vapor in air, Pa
-        xw=humidity.*f.*psv./p; %mol fraction of water vapor
+        f = 1.00062+3.14e-8*p +5.6e-7*temp.^2; %Enhancement factor, Cramer Equation A2
+        psv=exp(1.2811805e-5*tempK.^2-1.9509874e-2*tempK + 34.04926034 - 6.3536311e3./tempK); %saturation vapor pressure of water vapor in air, Pa, Cramer Equation A3
+        xw=humidity.*f.*psv./p; %mol fraction of water vapor, Cramer Equation A1
         xc=0.0004; %mol fraction of carbon dioxide
-        a0=331.5024;
+        a0=331.5024; %Cramer, Table III
         a1=0.603055;
         a2=-.000528;
         a3=51.471935;
@@ -42,6 +42,7 @@ switch modelFlag
         a13=-2.15e-13;
         a14=29.179762;
         a15=0.000486;
+        %Cramer Equation 15
         soundSpeed=a0+a1*temp+a2*temp.^2+(a3+a4*temp+a5*temp.^2).*xw+...
             (a6+a7*temp+a8*temp.^2)*p+(a9+a10+a11*temp.^2)*xc+...
             a12*xw.^2+a13*p^2+a14*xc^2+a15*xw*p*xc;
