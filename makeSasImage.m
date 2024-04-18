@@ -5,9 +5,9 @@ close all
 
 %% Setup the paths to the data file for processing and analysis
 
-%Also Tom specific -- TO DO: Generalize? UI?
-folder='C:\Users\kyled\Documents\teb_airsas'; %path to folder containing both \scenes and \characterization data
-filename='t2e1_29.h5'; %data file to load
+%Specify the path and filename before execution
+folder=''; %path to folder containing both \scenes and \characterization data
+filename=''; %specific .h5 data file to load
 dPath=fullfile(folder,'scenes',filename);
 
 addpath('utilities\') %add the utilities folder

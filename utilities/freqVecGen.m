@@ -20,11 +20,11 @@ else %for odd numbers of points
     freqVec=(-Nt/2:Nt/2)*df;
 end
 
-freqVecSwap = freqVec;
+freqVecSwap = freqVec; %temporary variable
 
-posFreqMask = freqVecSwap>=0;
+posFreqMask = freqVecSwap>=0; %select only the positive frequencies
 
-freqVec = [freqVecSwap(posFreqMask) freqVecSwap(~posFreqMask)];
+freqVec = [freqVecSwap(posFreqMask) freqVecSwap(~posFreqMask)]; %re-assemble freqVec in the new order
 
 
 end

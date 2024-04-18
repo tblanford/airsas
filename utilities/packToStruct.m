@@ -50,14 +50,19 @@ Wfm.pulseReplica=pulseReplica.*win;
 for n=1:numel(chanSelect)
     A(n).Data.tsRaw=h5read(dPath,['/ch',num2str(chanSelect(n)),'/ts']);
     
-% Some data conditioning
+    % Some data conditioning
     A(n).Data.tsRC = A(n).Data.tsRaw;
     
     % Remove the DC bias
     A(n).Data.tsRC = A(n).Data.tsRC - mean(A(n).Data.tsRC);
     
+    % Remove the group delay of the acquisition system
     A(n) = removeGroupDelay(A(n));
+
+    % Remove the direct path transmission from speaker to microphone
     A(n) = txBlanker(A(n));
+
+    %Apply a bandpass filter
     bandEdge = min([A(n).Wfm.fStart A(n).Wfm.fStop]);
     if bandEdge(1)>=5e3
         b = AirsasHpf(bandEdge-2e3,bandEdge,A(n).Params.fs);
@@ -65,8 +70,8 @@ for n=1:numel(chanSelect)
         A(n).Data.tsRC = circshift(A(n).Data.tsRC,-(length(b)-1)/2,1);
     end
     
+    %Write the matched filter output to the structure
     A(n).Data.tsRC = mfilt(A(n).Data.tsRC,A(n).Wfm.pulseReplica);
-
 
 end
 
