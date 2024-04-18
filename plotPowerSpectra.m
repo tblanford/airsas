@@ -3,12 +3,7 @@
 clear all
 close all
 
-%TO DO -- THESE ARE TOM SPECFIC.....How do we get the user to pick the
-%directory/files they want?
-% addpath(genpath('C:\Users\tblanford\OneDrive - USNH\Documents\MATLAB\modelFidelityATR\airsas'))
-% folder='D:\modelFidelityATR\data\experiment\dataSet'; %path to folder with the data
-
-folder='C:\Users\kyled\Documents\teb_airsas'; %path to folder containing both \scenes and \characterization data
+folder=''; %path to folder containing both \scenes and \characterization data
 
 fileList={'t0e1_01.h5','t1e1_01.h5','t1e2_01.h5','t1e4_01.h5','noise_01.h5'}; %data files to load
 
