@@ -65,7 +65,7 @@ A two digit suffix indicates the unique number of the collection. This suffix ra
 
 Additional data from the calibration and characterization of the experiment is stored in the “characterization data” folder. This portion of the dataset includes the electroacoustic calibration of the receive electronics, the directivity measurements of the transducers, measurements of the target coordinates and support lines in the free-field environment, and qualitative notes about collection anomalies.  The contents of this folder are summarized in the table below
 
-| File | Description |  Quantity of files |
+| File | Description |  Units |
 | :------------------- | :----------: | :----------: | 
 lineLength.csv | Measurements of the lengths of fishing line used to suspend targets in the free-fieldenvironment | m |
 targetElevation.csv | Measurements of the elevation of the targets in the free-field environment | m |
