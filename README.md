@@ -24,7 +24,7 @@ The four character prefix in the file name identifies the configuration of the t
 | t0              | No target      |  |
 | t1              | Solid sphere   | ![t1: Solid Sphere](./readme_images/solidSphere.png) |
 | t2              | Hollow sphere  | ![t2: Hollow Sphere](./readme_images/hollowSphere.png) |
-| t3              | Letter O       | ![t3: Letter O](./readme_images/LetterO.png) |
+| t3              | Letter O       | ![t3: Letter O](./readme_images/letterO.png) |
 | t4              | Letter Q       | ![t4: Letter Q](./readme_images/letterQ.png) |
 
 The second two charachters identify the background environment:
@@ -45,7 +45,7 @@ A two digit suffix indicates the unique number of the collection. This suffix ra
  t1e1_xx.h5 | Solid sphere, free-field | 42 |
  t2e1_xx.h5 | Hollow sphere, free-field | 32 |
  t3e1_xx.h5 | Letter O, free-field | 33 |
- t4e1_xx.h5 | Letter Q, free-field 31 |
+ t4e1_xx.h5 | Letter Q, free-field | 31 |
  t0e2_xx.h5 | No target present, flat interface | 14 |
  t1e2_xx.h5 | Solid sphere, flat interface | 34 |
  t2e2_xx.h5 | Hollow sphere, flat interface | 34 |
