@@ -1,6 +1,6 @@
 # AirSAS (In-air Synthetic Aperture Sonar)
 
-This code accompanies "In-air synthetic aperture sonar observations of target scattering in environments of varying complexity" by Blanford et al., published in XXX. The paper is available here\: Insert link when available.
+This code accompanies "An in-air synthetic aperture sonar dataset of target scattering in environments of varying complexity" by Blanford et al., published in XXX. The paper is available here\: Insert link when available.
 
 ## Background 
 ---
