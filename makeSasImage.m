@@ -3,14 +3,17 @@
 clear all
 close all
 
-%% Setup the paths to the data file for processing and analysis
+%% Setup the paths to the data file and code repository for processing and analysis
 
-%Specify the path and filename before execution
-folder=''; %path to folder containing both \scenes and \characterization data
-filename=''; %specific .h5 data file to load
-dPath=fullfile(folder,'scenes',filename);
+%Specify the path to the code repository
+basePath='';
+addpath(fullfile(basePath,'utilities\')) %add the utilities folder 
 
-addpath('utilities\') %add the utilities folder
+%Specify the path and filename for the data before execution
+dataFolder=''; %path to folder containing both \scenes and \characterization data
+filename='t1e4_01.h5'; %specific .h5 data file to load, t1e4_01.h5 will reproduce Fig 10b
+dPath=fullfile(dataFolder,'scenes',filename);
+
 
 %% Load and Plot a SAS Image
 %One of the simplest interactions with the data is to load the
@@ -30,13 +33,14 @@ set(gca,'YDir','normal')
 xlabel('Along-track (m)')
 ylabel('Cross-track (m)')
 clim([0,30])
+colormap(sasColormap)
 
 %% Load the complete set of data and pre-process the time series
 % Here the raw acoustic data, along with all of the non-acoustic parameters
 % are loaded and pre-processed
 chanSelect=1:4; %select which of the receiver channels to load
 cSelect=0; %flag for which sound speed model to use.  0=temp only, 1=temp+humidity
-A=packToStruct(folder,filename,chanSelect,cSelect); %load the data, and pre-process the time series for further processing
+A=packToStruct(dataFolder,filename,chanSelect,cSelect); %load the data, and pre-process the time series for further processing
 
 %% Reconstruct an image from the data using backprojection
 

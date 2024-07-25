@@ -3,11 +3,16 @@
 clear all
 close all
 
-folder=''; %path to folder containing both \scenes and \characterization data
 
+%Specify the paths to the data and code respository before execution
+basePath=''; %path to the code repository
+dataFolder=''; %path to folder containing both \scenes and \characterization data
+
+
+addpath(fullfile(basePath,'utilities\')) %add the utilities folder
 fileList={'t0e1_01.h5','t1e1_01.h5','t1e2_01.h5','t1e4_01.h5','noise_01.h5'}; %data files to load
 
-addpath('utilities\') %add the utilities folder
+
 
 chanSelect=1:4; %select which of the receiver channels to load
 cSelect=0; %flag for which sound speed model to use.  0=temp only, 1=temp+humidity
@@ -22,7 +27,7 @@ GxxVec=NaN(lWin,numel(chanSelect),numel(fileList)); %preallocate a vector for th
 
 
 for n=1:numel(fileList)
-    A=packToStruct(folder,fileList{n},chanSelect,cSelect); %load the data, and pre-process the time series for further processing
+    A=packToStruct(dataFolder,fileList{n},chanSelect,cSelect); %load the data, and pre-process the time series for further processing
     for m=1:numel(chanSelect)
         [Gxx,fVec]=pwelch(A(m).Data.tsRC(indStart:indStop,:),rectwin(lWin),[],lWin,A(m).Params.fs);
         GxxVec(:,m,n)=mean(Gxx,2);
