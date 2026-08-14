@@ -1,6 +1,6 @@
 # AirSAS (In-air Synthetic Aperture Sonar)
 
-This code accompanies "An in-air synthetic aperture sonar dataset of target scattering in environments of varying complexity" by Blanford et al., published in XXX. The paper is available here\: Insert link when available.
+This code accompanies "An in-air synthetic aperture sonar dataset of target scattering in environments of varying complexity" by Blanford et al., published in Scientific Data. The paper is available here\: [https://www.nature.com/articles/s41597-024-04050-0)](https://www.nature.com/articles/s41597-024-04050-0).
 
 ## Background 
 ---
@@ -10,7 +10,7 @@ This data set consists of in-air SAS data of multiple types of targets and backg
  
 ## Data Organization
 ---
-The data is available at XXXX. The data is organized into two folders\: “scenes” and “characterization data”. Within the “scenes” folder, the acoustic and non-acoustic data from the collection of each scene, along with the reconstructed imagery of the scene, are saved in .h5 files. Each .h5 file contains data from a unique collection of aparticular target and background configuration.
+The data is available at [XXXX](https://doi.org/10.6084/m9.figshare.26961892). The data is organized into two folders\: “scenes” and “characterization data”. Within the “scenes” folder, the acoustic and non-acoustic data from the collection of each scene, along with the reconstructed imagery of the scene, are saved in .h5 files. Each .h5 file contains data from a unique collection of a particular target and background configuration.
 
 ### scenes
 ---
