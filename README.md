@@ -10,7 +10,7 @@ This data set consists of in-air SAS data of multiple types of targets and backg
  
 ## Data Organization
 ---
-The data is available at [XXXX](https://doi.org/10.6084/m9.figshare.26961892). The data is organized into two folders\: “scenes” and “characterization data”. Within the “scenes” folder, the acoustic and non-acoustic data from the collection of each scene, along with the reconstructed imagery of the scene, are saved in .h5 files. Each .h5 file contains data from a unique collection of a particular target and background configuration.
+The data is available at [figshare](https://doi.org/10.6084/m9.figshare.26961892). The data is organized into two folders\: “scenes” and “characterization data”. Within the “scenes” folder, the acoustic and non-acoustic data from the collection of each scene, along with the reconstructed imagery of the scene, are saved in .h5 files. Each .h5 file contains data from a unique collection of a particular target and background configuration.
 
 ### scenes
 ---
